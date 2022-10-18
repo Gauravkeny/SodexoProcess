@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence___GST_Working" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1314,1072" sap2010:WorkflowViewState.IdRef="Sequence___GST_Working_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence___GST_Working" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1314,1752" sap2010:WorkflowViewState.IdRef="Sequence___GST_Working_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
       <x:String>System.Activities</x:String>
@@ -34,7 +34,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -68,15 +68,32 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence___GST_Working" sap:VirtualizedContainerService.HintSize="535,1007" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence___GST_Working" sap:VirtualizedContainerService.HintSize="535,1687" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence - GST Working" sap:VirtualizedContainerService.HintSize="493,917" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence - GST Working" sap:VirtualizedContainerService.HintSize="493,1597" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="Str_Sheet_Path" />
         <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
@@ -105,6 +122,36 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range - DT1" sap:VirtualizedContainerService.HintSize="431,97" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Main Sheet" WorkbookPath="[Str_Sheet_Path]" />
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="in_DT1.Columns.Add(&quot;Index&quot;)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="431,174" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+        <ui:InvokeCode.Arguments>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_DT1">
+            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT1" />
+          </InOutArgument>
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <Assign DisplayName="Assign - DT1 Add Index" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataTable">[DT1]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+From intval In Enumerable.Range(0,DT1.RowCount)
+Select DT1.Rows.Add({
+	DT1.Rows(intval)("PC Code"),
+	DT1.Rows(intval)("Vendor ID/GL Code"),
+	DT1.Rows(intval)("Net Amount"),
+	DT1.Rows(intval)("Invoice Date"),
+	DT1.Rows(intval)("TEXT"),
+	DT1.Rows(intval)("Invoice Number"),
+	DT1.Rows(intval)("Currency"),
+	DT1.Rows(intval)("Gross Amount"),
+	DT1.Rows(intval)("GST Amt"),
+	DT1.Rows(intval)("GST%"),
+	intval
+	})
+).CopyToDataTable()]</InArgument>
+        </Assign.Value>
+      </Assign>
       <Assign DisplayName="Assign - Clone DT1" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[DT2]</OutArgument>
@@ -125,17 +172,68 @@ And row("PC Code").ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(r
 And row("PC Code").ToString&lt;&gt;"31108001").CopyToDataTable()]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim result = in_DT1.AsEnumerable().Select(Function(val, ind) New With {&#xD;&#xA;        Key .Index = ind,&#xD;&#xA;        Key .Value = val(&quot;PC Code&quot;)&#xD;&#xA;    }).Where(Function(colvalue) _&#xD;&#xA;colvalue.value.ToString.Equals(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;\d+01&quot;).Value) _&#xD;&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;8\d+01&quot;).Value) _&#xD;&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;9\d+01&quot;).Value) _&#xD;&#xA;And colvalue.value.ToString&lt;&gt;&quot;31108001&quot;).Select(Function(x) x.Index).ToList()&#xD;&#xA;&#xD;&#xA;out_ListIndex = result&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke code - To Find the Index" sap:VirtualizedContainerService.HintSize="431,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
-        <ui:InvokeCode.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT1">[DT1]</InArgument>
-          <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_ListIndex">[ListIndex]</OutArgument>
-        </ui:InvokeCode.Arguments>
-      </ui:InvokeCode>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431,61" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim result = in_DT1.AsEnumerable().Select(Function(val, ind) New With {&#xA;        Key .Index = ind,&#xA;        Key .Value = val(&quot;PC Code&quot;)&#xA;    }).Where(Function(colvalue) _&#xA;colvalue.value.ToString.Equals(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;8\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;9\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;&quot;31108001&quot;).Select(Function(x) x.Index).ToList()&#xA;&#xA;out_ListIndex = result&#xA;&#xA;" DisplayName="Invoke code - To Find the Index" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT1">[DT1]</InArgument>
+                <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_ListIndex">[ListIndex]</OutArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
       <Assign DisplayName="Assign - DT3" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[DT3]</OutArgument>
         </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable">[DT2.Clone]</InArgument>
+        </Assign.Value>
       </Assign>
+      <Assign DisplayName="Assign - DT3 Values with GST Code" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataTable">[DT3]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In DT2.AsEnumerable()
+Select DT3.Rows.Add({
+	row.item(0),
+	row.item(1),
+	row.item(7),
+	row.item(3),
+	row.item(4),
+	row.item(5),
+	row.item(6),
+	row.item(7),
+	row.item(8),
+	row.item(9),
+	row.item(10)
+	})).CopyToDataTable()]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim FindMax As Func(Of Integer, Integer, Integer) = Function(ByVal num1 As Integer, ByVal num2 As Integer) As Integer&#xD;&#xA;&#xD;&#xA;Dim result As Integer&#xD;&#xA;&#xD;&#xA;If (num1 &gt; num2) Then&#xD;&#xA;result = num1&#xD;&#xA;Else&#xD;&#xA;result = num2&#xD;&#xA;End If&#xD;&#xA;Return result&#xD;&#xA;&#xD;&#xA;End Function" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="431,174" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+        <ui:InvokeCode.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeCode.Arguments>
+      </ui:InvokeCode>
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="431,97" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </WriteLine>
     </Sequence>
   </Sequence>
 </Activity>
