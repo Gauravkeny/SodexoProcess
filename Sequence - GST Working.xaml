@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence___GST_Working" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1314,2716" sap2010:WorkflowViewState.IdRef="Sequence___GST_Working_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence___GST_Working" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1314,1077" sap2010:WorkflowViewState.IdRef="Sequence___GST_Working_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -36,7 +36,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="53">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="106">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -89,64 +89,79 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence___GST_Working" sap:VirtualizedContainerService.HintSize="540,2651" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence___GST_Working" sap:VirtualizedContainerService.HintSize="504,1012" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence - GST Working" sap:VirtualizedContainerService.HintSize="498,2431" sap2010:WorkflowViewState.IdRef="Sequence_7">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="Str_Sheet_Path" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT2" />
-        <Variable x:TypeArguments="scg:List(x:Int32)" Default="[New List(Of Integer)]" Name="ListIndex" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT3" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT4" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT5" />
-      </Sequence.Variables>
+    <Sequence sap:VirtualizedContainerService.HintSize="462,922" sap2010:WorkflowViewState.IdRef="Sequence_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,110" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[Str_Sheet_Path]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">Input\My Logic Excel.xlsx</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range - DT1" sap:VirtualizedContainerService.HintSize="436,97" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Main Sheet" WorkbookPath="[Str_Sheet_Path]" />
-      <Assign DisplayName="Assign - Clone DT1" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_1">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT2]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT1.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="in_DT2.Columns.Add(&quot;Index&quot;)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
-        <ui:InvokeCode.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_DT2">[DT2]</InOutArgument>
-        </ui:InvokeCode.Arguments>
-      </ui:InvokeCode>
-      <Assign DisplayName="Assign - DT1 Add Index" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT2]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="442,180" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Sequence - GST Working" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Str_Sheet_Path" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT2" />
+                <Variable x:TypeArguments="scg:List(x:Int32)" Default="[New List(Of Integer)]" Name="ListIndex" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT3" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT4" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT5" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,110" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Str_Sheet_Path]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">Input\My Logic Excel.xlsx</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT1]" DisplayName="Read Range - DT1" sap:VirtualizedContainerService.HintSize="436,97" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Main Sheet" WorkbookPath="[Str_Sheet_Path]" />
+              <Assign DisplayName="Assign - Clone DT1" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT2]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT1.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="in_DT2.Columns.Add(&quot;Index&quot;)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                <ui:InvokeCode.Arguments>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_DT2">[DT2]</InOutArgument>
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+              <Assign DisplayName="Assign - DT1 Add Index" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT2]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
 From intval In Enumerable.Range(0,DT1.RowCount)
 Select DT2.Rows.Add({
 	DT1.Rows(intval)("PC Code"),
@@ -162,65 +177,65 @@ Select DT2.Rows.Add({
 	intval
 	})
 ).CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - DT3" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_3">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT3]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT2.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - Filter 01" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_2">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT3]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[DT2.AsEnumerable().where(Function(row) _
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - DT3" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT3]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT2.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - Filter 01" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT3]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[DT2.AsEnumerable().where(Function(row) _
 row("PC Code").ToString.Equals(System.Text.RegularExpressions.Regex.Match(row("PC Code").ToString,"\d+01").Value) _
 And row("PC Code").ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row("PC Code").ToString,"8\d+01").Value) _
 And row("PC Code").ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row("PC Code").ToString,"9\d+01").Value) _
 And row("PC Code").ToString&lt;&gt;"31108001").CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim result = in_DT1.AsEnumerable().Select(Function(val, ind) New With {&#xA;        Key .Index = ind,&#xA;        Key .Value = val(&quot;PC Code&quot;)&#xA;    }).Where(Function(colvalue) _&#xA;colvalue.value.ToString.Equals(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;8\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;9\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;&quot;31108001&quot;).Select(Function(x) x.Index).ToList()&#xA;&#xA;out_ListIndex = result&#xA;&#xA;" DisplayName="Invoke code - To Find the Index" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
-              <ui:InvokeCode.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT1">[DT1]</InArgument>
-                <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_ListIndex">[ListIndex]</OutArgument>
-              </ui:InvokeCode.Arguments>
-            </ui:InvokeCode>
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
-      <Assign DisplayName="Assign - Final Updation" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_6">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT4]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT1.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - DT3 Values with GST Code" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_4">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT4]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In DT3.AsEnumerable()
+                </Assign.Value>
+              </Assign>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim result = in_DT1.AsEnumerable().Select(Function(val, ind) New With {&#xA;        Key .Index = ind,&#xA;        Key .Value = val(&quot;PC Code&quot;)&#xA;    }).Where(Function(colvalue) _&#xA;colvalue.value.ToString.Equals(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;8\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(colvalue.value.ToString,&quot;9\d+01&quot;).Value) _&#xA;And colvalue.value.ToString&lt;&gt;&quot;31108001&quot;).Select(Function(x) x.Index).ToList()&#xA;&#xA;out_ListIndex = result&#xA;&#xA;" DisplayName="Invoke code - To Find the Index" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT1">[DT1]</InArgument>
+                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_ListIndex">[ListIndex]</OutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <Assign DisplayName="Assign - Final Updation" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT4]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT1.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - DT3 Values with GST Code" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT4]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In DT3.AsEnumerable()
 Select DT4.Rows.Add({
 	row.item(0),
 	row.item(1),
@@ -234,106 +249,123 @@ Select DT4.Rows.Add({
 	row.item(9),
 	row.item(10)
 	})).CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - DT5" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_7">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT5]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT4.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - Update DT5 Value" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_8">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT5]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - DT5" sap:VirtualizedContainerService.HintSize="436,70" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT5]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT4.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - Update DT5 Value" sap:VirtualizedContainerService.HintSize="436,74" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT5]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
 From row In DT1.AsEnumerable()
 Select DT5.LoadDataRow(New Object () {
 	row.Field(Of Object)("")
 	},True)
 ).CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim CheckList As Func(Of String, String, Boolean) = &#xA;Function(ByVal intStr As String, ByVal Valstr As String) As Boolean&#xA;&#xA;&#x9;If (intStr = Valstr) Then&#xA;&#xA;&#x9;&#x9;Return True&#xA;&#xA;&#x9;Else&#xA;&#xA;&#x9;&#x9;Return False&#xA;&#xA;&#x9;End If&#xA;&#xA;End Function" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
-        <ui:InvokeCode.Arguments>
-          <scg:Dictionary x:TypeArguments="x:String, Argument" />
-        </ui:InvokeCode.Arguments>
-      </ui:InvokeCode>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,169" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                </Assign.Value>
+              </Assign>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim CheckList As Func(Of String, String, Boolean) = &#xA;Function(ByVal intStr As String, ByVal Valstr As String) As Boolean&#xA;&#xA;&#x9;If (intStr = Valstr) Then&#xA;&#xA;&#x9;&#x9;Return True&#xA;&#xA;&#x9;Else&#xA;&#xA;&#x9;&#x9;Return False&#xA;&#xA;&#x9;End If&#xA;&#xA;End Function" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,174" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+                <ui:InvokeCode.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,169" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,97" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </WriteLine>
+            </Sequence>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="CommentOut_5">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="442,180" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </ui:CommentOut.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:CommentOut>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,97" sap2010:WorkflowViewState.IdRef="WriteLine_1">
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
-      </WriteLine>
-    </Sequence>
-    <Sequence DisplayName="Sequence - Proper Data" sap:VirtualizedContainerService.HintSize="498,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="Str_Sheet_Path" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT_InputData" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT_InputDataClone" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT_Filter01" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT_NetGrossEqual" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DT_Final" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,110" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[Str_Sheet_Path]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">Input\My Logic Excel.xlsx</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_InputData]" DisplayName="Read Range - DT_InputData" sap:VirtualizedContainerService.HintSize="431,97" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Main Sheet" WorkbookPath="[Str_Sheet_Path]" />
-      <Assign DisplayName="Assign - DT_InputDataClone" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_9">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT_InputDataClone]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT_InputData.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="in_DT_InputDataClone.Columns.Add(&quot;Index&quot;)" DisplayName="Invoke code - Add Index to InputDataClone" sap:VirtualizedContainerService.HintSize="431,174" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
-        <ui:InvokeCode.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_InputDataClone">[DT_InputDataClone]</InOutArgument>
-        </ui:InvokeCode.Arguments>
-      </ui:InvokeCode>
-      <Assign DisplayName="Assign - Add Index Value" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_10">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT_InputDataClone]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+            <Sequence DisplayName="Sequence - Proper Data" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Str_Sheet_Path" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_InputData" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_InputDataClone" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_Filter01" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_NetGrossEqual" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_Final" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,110" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[Str_Sheet_Path]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">Input\My Logic Excel.xlsx</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_InputData]" DisplayName="Read Range - DT_InputData" sap:VirtualizedContainerService.HintSize="431,97" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Main Sheet" WorkbookPath="[Str_Sheet_Path]" />
+              <Assign DisplayName="Assign - DT_InputDataClone" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT_InputDataClone]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT_InputData.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="in_DT_InputDataClone.Columns.Add(&quot;Index&quot;)" DisplayName="Invoke code - Add Index to InputDataClone" sap:VirtualizedContainerService.HintSize="431,174" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+                <ui:InvokeCode.Arguments>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_InputDataClone">[DT_InputDataClone]</InOutArgument>
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+              <Assign DisplayName="Assign - Add Index Value" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT_InputDataClone]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
 From intval In Enumerable.Range(0,DT_InputData.RowCount)
 Select DT_InputDataClone.Rows.Add({
 	DT_InputData.Rows(intval)("PC Code"),
@@ -349,42 +381,42 @@ Select DT_InputDataClone.Rows.Add({
 	intval
 	})
 ).CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - DT_Filter01" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_11">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT_Filter01]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT_InputDataClone.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - DT_Filter01" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_12">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT_Filter01]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[DT_InputDataClone.AsEnumerable().where(Function(row) _
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - DT_Filter01" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT_Filter01]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT_InputDataClone.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - DT_Filter01" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_12">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT_Filter01]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[DT_InputDataClone.AsEnumerable().where(Function(row) _
 row("PC Code").ToString.Equals(System.Text.RegularExpressions.Regex.Match(row("PC Code").ToString,"\d+01").Value) _
 And row("PC Code").ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row("PC Code").ToString,"8\d+01").Value) _
 And row("PC Code").ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row("PC Code").ToString,"9\d+01").Value) _
 And row("PC Code").ToString&lt;&gt;"31108001").CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - DT_NetGrossEqual" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_13">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT_NetGrossEqual]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[DT_Filter01.Clone]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign DisplayName="Assign - Update DT_NetGrossEqual" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_14">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[DT_NetGrossEqual]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In DT_Filter01.AsEnumerable()
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - DT_NetGrossEqual" sap:VirtualizedContainerService.HintSize="431,70" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT_NetGrossEqual]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[DT_Filter01.Clone]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Assign - Update DT_NetGrossEqual" sap:VirtualizedContainerService.HintSize="431,74" sap2010:WorkflowViewState.IdRef="Assign_14">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[DT_NetGrossEqual]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(From row In DT_Filter01.AsEnumerable()
 Select DT_NetGrossEqual.Rows.Add({
 	row.item(0),
 	row.item(1),
@@ -398,23 +430,33 @@ Select DT_NetGrossEqual.Rows.Add({
 	row.item(9),
 	row.item(10)
 	})).CopyToDataTable()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431,61" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim out_DT_Final As DataTable = in_DT_InputDataClone.Clone&#xD;&#xA;&#xD;&#xA;Dim CheckList As Func(Of String, String, Boolean) = &#xD;&#xA;Function(ByVal intStr As String, ByVal Valstr As String) As Boolean&#xD;&#xA;&#xD;&#xA;&#x9;If (intStr = Valstr) Then&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Return True&#xD;&#xA;&#xD;&#xA;&#x9;Else&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Return False&#xD;&#xA;&#xD;&#xA;&#x9;End If&#xD;&#xA;&#xD;&#xA;End Function&#xD;&#xA;&#xD;&#xA;out_DT_Final = (&#xD;&#xA;From row In in_DT_InputDataClone&#xD;&#xA;Let intCount = in_DT_NetGrossEqual.AsEnumerable().Where(Function(rowG) CheckList(rowG(&quot;Index&quot;).ToString,row(&quot;Index&quot;).ToString)).Count()&#xD;&#xA;Let PC_Code = &#xD;&#xA;If(intCount.ToString.Equals(&quot;0&quot;),&#xD;&#xA;&#x9;row(&quot;PC Code&quot;).ToString,&#xD;&#xA;&#x9;(in_DT_NetGrossEqual.AsEnumerable().Where(Function(rowG)  rowG(&quot;Index&quot;).ToString.Equals(row(&quot;Index&quot;).ToString)).First()(&quot;PC Code&quot;).ToString)&#xD;&#xA;&#x9;)&#xD;&#xA;Select out_DT_Final.Rows.Add({PC_Code})&#xD;&#xA;).CopyToDataTable()" DisplayName="Invoke code - Delete and Update Files" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
-              <ui:InvokeCode.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_InputDataClone">[DT_InputDataClone]</InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_NetGrossEqual">[DT_NetGrossEqual]</InArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_Final">[DT_Final]</OutArgument>
-              </ui:InvokeCode.Arguments>
-            </ui:InvokeCode>
+                </Assign.Value>
+              </Assign>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431,61" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,264" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim out_DT_Final As DataTable = in_DT_InputDataClone.Clone&#xA;&#xA;Dim CheckList As Func(Of String, String, Boolean) = &#xA;Function(ByVal intStr As String, ByVal Valstr As String) As Boolean&#xA;&#xA;&#x9;If (intStr = Valstr) Then&#xA;&#xA;&#x9;&#x9;Return True&#xA;&#xA;&#x9;Else&#xA;&#xA;&#x9;&#x9;Return False&#xA;&#xA;&#x9;End If&#xA;&#xA;End Function&#xA;&#xA;out_DT_Final = (&#xA;From row In in_DT_InputDataClone&#xA;Let intCount = in_DT_NetGrossEqual.AsEnumerable().Where(Function(rowG) CheckList(rowG(&quot;Index&quot;).ToString,row(&quot;Index&quot;).ToString)).Count()&#xA;Let PC_Code = &#xA;If(intCount.ToString.Equals(&quot;0&quot;),&#xA;&#x9;row(&quot;PC Code&quot;).ToString,&#xA;&#x9;(in_DT_NetGrossEqual.AsEnumerable().Where(Function(rowG)  rowG(&quot;Index&quot;).ToString.Equals(row(&quot;Index&quot;).ToString)).First()(&quot;PC Code&quot;).ToString)&#xA;&#x9;)&#xA;Select out_DT_Final.Rows.Add({PC_Code})&#xA;).CopyToDataTable()" DisplayName="Invoke code - Delete and Update Files" sap:VirtualizedContainerService.HintSize="358,174" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_InputDataClone">[DT_InputDataClone]</InArgument>
+                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_NetGrossEqual">[DT_NetGrossEqual]</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_Final">[DT_Final]</OutArgument>
+                      </ui:InvokeCode.Arguments>
+                    </ui:InvokeCode>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+            </Sequence>
           </Sequence>
         </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
@@ -424,6 +466,29 @@ Select DT_NetGrossEqual.Rows.Add({
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
+      <Sequence DisplayName="Sequence - GST Equal" sap:VirtualizedContainerService.HintSize="400,598" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="sd:DataTable" Name="DT_ReadData" />
+          <Variable x:TypeArguments="sd:DataTable" Name="Final_DT" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_ReadData]" DisplayName="Read Range - DT_ReadData" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Main" WorkbookPath="C:\Users\LENOVO\Desktop\Pasta Process.xlsx" />
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim DT_Filter_Data As DataTable = in_DT_ReadData.Clone&#xD;&#xA;&#xD;&#xA;'DT_Filter_Data = in_DT_ReadData.AsEnumerable().where(Function(row) _&#xD;&#xA;'row(&quot;PC Code&quot;).ToString.Equals(System.Text.RegularExpressions.Regex.Match(row(&quot;PC Code&quot;).ToString,&quot;\d+01&quot;).Value) _&#xD;&#xA;'And row(&quot;PC Code&quot;).ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row(&quot;PC Code&quot;).ToString,&quot;8\d+01&quot;).Value) _&#xD;&#xA;'And row(&quot;PC Code&quot;).ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row(&quot;PC Code&quot;).ToString,&quot;9\d+01&quot;).Value) _&#xD;&#xA;'And row(&quot;PC Code&quot;).ToString&lt;&gt;&quot;31108001&quot;).CopyToDataTable()&#xD;&#xA;&#xD;&#xA;Dim DT_GST_Update As New DataTable&#xD;&#xA;&#xD;&#xA;DT_GST_Update = in_DT_ReadData.Clone&#xD;&#xA;&#xD;&#xA;DT_GST_Update = &#xD;&#xA;(&#xD;&#xA;From row In in_DT_ReadData&#xD;&#xA;Let GST_Update = If(row(&quot;Column1&quot;).ToString.Equals(System.Text.RegularExpressions.Regex.Match(row(&quot;Column1&quot;).ToString,&quot;\d+01&quot;).Value) _&#xD;&#xA;And row(&quot;Column1&quot;).ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row(&quot;Column1&quot;).ToString,&quot;8\d+01&quot;).Value) _&#xD;&#xA;And row(&quot;Column1&quot;).ToString&lt;&gt;(System.Text.RegularExpressions.Regex.Match(row(&quot;Column1&quot;).ToString,&quot;9\d+01&quot;).Value) _&#xD;&#xA;And row(&quot;Column1&quot;).ToString&lt;&gt;&quot;31108001&quot;,row(&quot;Column4&quot;),row(&quot;Column3&quot;))&#xD;&#xA;Select DT_GST_Update.Rows.Add({&#xD;&#xA;&#x9;row(0),row(1),row(2),GST_Update,row(4),row(5),row(6),row(7),row(8),row(9),row(10),&#xD;&#xA;&#x9;row(11),row(12),row(13),row(14),row(15),row(16),row(17),row(18),row(19),row(20),&#xD;&#xA;&#x9;row(21),row(22),row(23),row(24),row(25),row(26),row(27),row(28),row(29)&#xD;&#xA;&#x9;})&#xD;&#xA;).CopyToDataTable()&#xD;&#xA;&#xD;&#xA;out_Final_DT = DT_GST_Update&#xD;&#xA;" DisplayName="Invoke code - " sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+          <ui:InvokeCode.Arguments>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_ReadData">
+              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_ReadData" />
+            </InArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Final_DT">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Final_DT" />
+            </OutArgument>
+          </ui:InvokeCode.Arguments>
+        </ui:InvokeCode>
+        <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Final_DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="338,125" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\LENOVO\Desktop\Pasta Process.xlsx" />
+      </Sequence>
     </Sequence>
   </Sequence>
 </Activity>
